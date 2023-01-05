@@ -1,0 +1,17 @@
+{
+    "name": "Rust Dev Container",
+    "dockerFile": "Dockerfile",
+    "context": ".",
+    "runArgs": [
+        "--env",
+        "DEBIAN_FRONTEND=noninteractive"
+    ],
+    "extensions": [
+        "rust-lang.rust",
+        "rust-lang.rust-analyzer"
+    ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "postCreateCommand": "rustup component add rust-src && rustup component add clippy"
+}
